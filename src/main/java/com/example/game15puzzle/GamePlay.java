@@ -15,7 +15,11 @@ public class GamePlay {
 
     //Re-initialize array
     public void Init() {
-
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                numbers[i][j] = 0;
+            }
+        }
     }
 
     public void PrintArr() {
