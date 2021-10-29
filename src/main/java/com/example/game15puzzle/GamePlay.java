@@ -22,6 +22,11 @@ public class GamePlay {
         }
     }
 
+    //The values of the elements in the array are random
+    public void RandArr() {
+        
+    }
+
     public void PrintArr() {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
