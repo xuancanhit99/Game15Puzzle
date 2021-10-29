@@ -55,4 +55,28 @@ class Game15PuzzleApplicationTests {
         assertThat(num00).isNotEqualTo(numResult00);
     }
 
+    @Test
+    public void Puzzle15CheckWinTestCase4() {
+        GamePlay gamePlay = new GamePlay();
+        int[][] arrTest = new int[4][4];
+        arrTest[0][0] = 1;
+        arrTest[0][1] = 2;
+        arrTest[0][2] = 3;
+        arrTest[0][3] = 4;
+        arrTest[1][0] = 5;
+        arrTest[1][1] = 6;
+        arrTest[1][2] = 7;
+        arrTest[1][3] = 8;
+        arrTest[2][0] = 9;
+        arrTest[2][1] = 10;
+        arrTest[2][2] = 11;
+        arrTest[2][3] = 12;
+        arrTest[3][0] = 13;
+        arrTest[3][1] = 14;
+        arrTest[3][2] = 15;
+        gamePlay.setNumbers(arrTest);
+        Boolean output = gamePlay.CheckWin();
+        assertThat(output).isEqualTo(true);
+    }
+
 }
