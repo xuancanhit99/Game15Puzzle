@@ -44,4 +44,15 @@ class Game15PuzzleApplicationTests {
         assertThat(gamePlay.getNumbers()).isNotEqualTo(arrResult);
     }
 
+    @Test
+    public void GamePlayCheckArrValidTestCase3() {
+        GamePlay gamePlay = new GamePlay();
+        gamePlay.Init();
+        gamePlay.RandArr();
+        int num00 = gamePlay.getNumbers()[0][0];
+        gamePlay.CheckArrValid();
+        int numResult00 = gamePlay.getNumbers()[0][0];
+        assertThat(num00).isNotEqualTo(numResult00);
+    }
+
 }
