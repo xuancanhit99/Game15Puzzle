@@ -80,6 +80,20 @@ public class GamePlay {
     }
 
 
+    public boolean CheckWin() {
+        boolean status = true;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (i == 3 && j > 2)
+                    break;
+                if (numbers[i][j] != i * 4 + j + 1) {
+                    status = false;
+                }
+            }
+        }
+        return status;
+    }
+
     public void PrintArr() {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -101,9 +115,11 @@ public class GamePlay {
         GamePlay gamePlay = new GamePlay();
         gamePlay.Init();
         gamePlay.Print();
+
         gamePlay.RandArr();
         gamePlay.Print();
         gamePlay.PrintArr();
+
         gamePlay.CheckArrValid();
         gamePlay.Print();
         gamePlay.PrintArr();
