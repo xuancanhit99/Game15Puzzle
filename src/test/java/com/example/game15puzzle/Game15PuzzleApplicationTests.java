@@ -79,4 +79,52 @@ class Game15PuzzleApplicationTests {
         assertThat(output).isEqualTo(true);
     }
 
+    @Test
+    public void Puzzle15CheckWinTestCase5() {
+        GamePlay gamePlay = new GamePlay();
+        int[][] arrTest = new int[4][4];
+        arrTest[0][0] = 1;
+        arrTest[0][1] = 2;
+        arrTest[0][2] = 13;
+        arrTest[0][3] = 14;
+        arrTest[1][0] = 15;
+        arrTest[1][1] = 6;
+        arrTest[1][2] = 7;
+        arrTest[1][3] = 8;
+        arrTest[2][0] = 9;
+        arrTest[2][1] = 10;
+        arrTest[2][2] = 11;
+        arrTest[2][3] = 12;
+        arrTest[3][0] = 3;
+        arrTest[3][1] = 4;
+        arrTest[3][2] = 5;
+        gamePlay.setNumbers(arrTest);
+        Boolean output = gamePlay.CheckWin();
+        assertThat(output).isEqualTo(false);
+    }
+
+    @Test
+    public void Puzzle15CheckWinTestCase6() {
+        GamePlay gamePlay = new GamePlay();
+        int[][] arrTest = new int[4][4];
+        arrTest[0][0] = 1;
+        arrTest[0][1] = 3;
+        arrTest[0][2] = 5;
+        arrTest[0][3] = 7;
+        arrTest[1][0] = 9;
+        arrTest[1][1] = 11;
+        arrTest[1][2] = 13;
+        arrTest[1][3] = 15;
+        arrTest[2][0] = 14;
+        arrTest[2][1] = 12;
+        arrTest[2][2] = 10;
+        arrTest[2][3] = 8;
+        arrTest[3][0] = 6;
+        arrTest[3][1] = 4;
+        arrTest[3][2] = 2;
+        gamePlay.setNumbers(arrTest);
+        Boolean output = gamePlay.CheckWin();
+        assertThat(output).isEqualTo(false);
+    }
+
 }
