@@ -40,7 +40,8 @@ class Game15PuzzleApplicationTests {
         int[][] arrTest = new int[4][4]; //(All values in array = 0)
         gamePlay.setNumbers(arrTest);
         gamePlay.RandArr();
-        assertThat(gamePlay.getNumbers()).isNotEqualTo(arrTest);
+        int[][] arrResult = new int[4][4]; //(All values in array = 0)
+        assertThat(gamePlay.getNumbers()).isNotEqualTo(arrResult);
     }
 
 }
