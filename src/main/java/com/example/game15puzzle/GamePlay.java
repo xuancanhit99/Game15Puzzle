@@ -49,6 +49,34 @@ public class GamePlay {
     }
 
     private void initComponents() {
+        jButton1 = new JButton();
+        jButton2 = new JButton();
+        jButton3 = new JButton();
+        jButton4 = new JButton();
+        jButton5 = new JButton();
+        jButton6 = new JButton();
+        jButton7 = new JButton();
+        jButton8 = new JButton();
+        jButton9 = new JButton();
+        jButtonStartRTP = new JButton();
+        jLabel1 = new JLabel();
+        jLabel2 = new JLabel();
+        jLabel3 = new JLabel();
+        jLabel4 = new JLabel();
+        jLabel5 = new JLabel();
+        jLabel6 = new JLabel();
+
+        jPanelRTP = new JPanel();
+        jPanel15P = new JPanel();
+        jPanel15pBottom = new JPanel();
+
+
+        jFrameRuleRTP = new JFrame();
+        jButtonPlayRTP = new JButton();
+        jTextAreaRTP = new JTextArea();
+        jFrameRule15P = new JFrame();
+        jTextArea15P = new JTextArea();
+
 
     }
 
