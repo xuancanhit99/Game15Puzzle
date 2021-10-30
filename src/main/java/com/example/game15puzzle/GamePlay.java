@@ -128,6 +128,63 @@ public class GamePlay {
                                 .addComponent(jButtonPlayRTP)
                                 .addGap(30, 30, 30))
         );
+
+        //---Game 15P---
+        jFrameRule15P.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        jFrameRule15P.setTitle("Правила игры пятнашки");
+        jFrameRule15P.setBounds(new Rectangle(0, 0, 500, 500));
+        jFrameRule15P.setLocationRelativeTo(null);
+
+        jButtonPlay15P = new JButton();
+        jButtonPlay15P.setText("Перейти к игре");
+        jButtonPlay15P.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButtonPlay15PActionPerformed(e);
+            }
+        });
+
+
+        jTextArea15P.setColumns(20);
+        jTextArea15P.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+        jTextArea15P.setRows(5);
+        jTextArea15P.setText("                                           Добро пожаловать!\n\n" +
+                "   При нажатии кнопки \"Перейти к игре\" перед вами появится \n игровое поле 4х4 со стоящими на нем числами от 1 до 15\n(в случайном порядке). Ваша задача восстановить порядок чисел.\n Желаю удачи!");
+        jTextArea15P.setEditable(false);
+
+        jScrollPane15P = new JScrollPane();
+        jScrollPane15P.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        jScrollPane15P.setViewportView(jTextArea15P);
+
+        jFrame15PLayout = new GroupLayout(jFrameRule15P.getContentPane());
+        jFrameRule15P.getContentPane().setLayout(jFrame15PLayout);
+        jFrame15PLayout.setHorizontalGroup(
+                jFrame15PLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(jFrame15PLayout.createSequentialGroup()
+                                .addGap(180, 180, 180)
+                                .addComponent(jButtonPlay15P)
+                                .addContainerGap(200, Short.MAX_VALUE)
+                        )
+                        .addComponent(jScrollPane15P)
+        );
+
+        jFrame15PLayout.setVerticalGroup(
+                jFrame15PLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(GroupLayout.Alignment.TRAILING, jFrame15PLayout.createSequentialGroup()
+                                .addComponent(jScrollPane15P, GroupLayout.PREFERRED_SIZE, 230, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                                .addComponent(jButtonPlay15P)
+                                .addGap(30, 30, 30))
+        );
+
+        //Game Main Windows: RTP, 15P
+        jFrameGameMain = new JFrame();
+        jFrameGameMain.setTitle("Игра");
+        jFrameGameMain.setBounds(new Rectangle(0, 0, 750, 520));
+        jFrameGameMain.setLocationRelativeTo(null);
+
+
+
     }
 
     //Re-initialize array
