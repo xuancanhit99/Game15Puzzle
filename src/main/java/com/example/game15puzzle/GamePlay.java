@@ -542,6 +542,60 @@ public class GamePlay {
         jPanel15P.validate();
     }
 
+    private class ClickListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            JButton button = (JButton) e.getSource();
+            button.setVisible(false);
+            String name = button.getText();
+            change(Integer.parseInt(name));
+        }
+    }
+
+    public void change(int num) {
+        int i = 0, j = 0;
+        for (int k = 0; k < 4; k++) {
+            for (int l = 0; l < 4; l++) {
+                if (numbers[k][l] == num) {
+                    i = k;
+                    j = l;
+                }
+            }
+        }
+        if (i > 0) {
+            if (numbers[i - 1][j] == 0) {
+                numbers[i - 1][j] = num;
+                numbers[i][j] = 0;
+            }
+        }
+        if (i < 3) {
+            if (numbers[i + 1][j] == 0) {
+                numbers[i + 1][j] = num;
+                numbers[i][j] = 0;
+            }
+        }
+        if (j > 0) {
+            if (numbers[i][j - 1] == 0) {
+                numbers[i][j - 1] = num;
+                numbers[i][j] = 0;
+            }
+        }
+        if (j < 3) {
+            if (numbers[i][j + 1] == 0) {
+                numbers[i][j + 1] = num;
+                numbers[i][j] = 0;
+            }
+        }
+        repaintField();
+        if (checkWin()) {
+            JOptionPane.showMessageDialog(null, "Игра закончена!", "Вы выиграли!", 1);
+            init();
+            repaintField();
+            setVisible(false);
+            setVisible(true);
+        }
+    }
+
+
     public boolean checkWin() {
         boolean status = true;
         for (int i = 0; i < 4; i++) {
