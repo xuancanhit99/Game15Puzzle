@@ -203,6 +203,22 @@ public class GamePlay {
         jTabbedPaneGameMain.addTab("Переставь фигуры", jPanelRTP);
         jTabbedPaneGameMain.addTab("Пятнашки", jPanel15P);
 
+
+        //Tab 15P
+        GridLayout jPanel15PLayout = new GridLayout(5, 4, 2, 2);
+        jPanel15P.setLayout(jPanel15PLayout);
+        init();
+        jPanel15P.setDoubleBuffered(true);
+        repaintField();
+
+        jButton15PMixNum.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                init();
+                repaintField();
+            }
+        });
+
     }
 
     //Re-initialize array
