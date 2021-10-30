@@ -308,6 +308,110 @@ public class GamePlay {
                         .addComponent(jTabbedPaneGameMain)
         );
 
+        //Game Main
+        jButton1.setEnabled(false);
+        jButton1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton1ActionPerformed(e);
+            }
+        });
+
+        jButton2.setEnabled(false);
+        jButton2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton2ActionPerformed(e);
+            }
+        });
+
+        jButton3.setEnabled(false);
+        jButton3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton3ActionPerformed(e);
+            }
+        });
+
+        jButton4.setEnabled(false);
+        jButton4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton4ActionPerformed(e);
+            }
+        });
+
+        jButton5.setEnabled(false);
+        jButton5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton5ActionPerformed(e);
+            }
+
+        });
+
+        jButton6.setEnabled(false);
+        jButton6.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton6ActionPerformed(e);
+            }
+        });
+
+        jButton7.setEnabled(false);
+        jButton7.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton7ActionPerformed(e);
+            }
+        });
+
+        jButton8.setEnabled(false);
+        jButton8.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton8ActionPerformed(e);
+            }
+        });
+
+        jButton9.setEnabled(false);
+        jButton9.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton9ActionPerformed(e);
+            }
+        });
+
+        jLabel1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        jLabel1.setText("1");
+
+        jLabel2.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        jLabel2.setText("2");
+
+        jLabel3.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        jLabel3.setText("3");
+
+        jLabel4.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        jLabel4.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel4.setText("A");
+        jLabel4.setHorizontalTextPosition(SwingConstants.RIGHT);
+
+        jLabel5.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        jLabel5.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel5.setText("B");
+
+        jLabel6.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        jLabel6.setHorizontalAlignment(SwingConstants.CENTER);
+        jLabel6.setText("C");
+
+        jButtonStartRTP.setText("Начать игру");
+        jButtonStartRTP.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButtonStartRTPActionPerformed(e);
+            }
+        });
+
     }
 
     private void init() {
