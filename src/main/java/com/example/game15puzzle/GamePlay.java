@@ -412,6 +412,49 @@ public class GamePlay {
             }
         });
 
+        //Menu
+        jMenuMainGame = new JMenu();
+        jMenuGame = new JMenu();
+        jMenuItemGameRTP = new JMenuItem();
+        jMenuItemGame15P = new JMenuItem();
+        jMenuItemExit = new JMenuItem();
+        jMenuBarMain = new JMenuBar();
+
+        jMenuMainGame.setText("Игры");
+        jMenuGame.setText("Об игре");
+        jMenuItemGameRTP.setText("Переставь фигуры");
+        jMenuItemGameRTP.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jMenuItemRTPActionPerformed(e);
+            }
+        });
+        jMenuGame.add(jMenuItemGameRTP);
+
+        jMenuItemGame15P.setText("Пятнашки");
+        jMenuItemGame15P.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jMenuItem15PActionPerformed(e);
+            }
+        });
+        jMenuGame.add(jMenuItemGame15P);
+
+        jMenuMainGame.add(jMenuGame);
+
+        jMenuItemExit.setText("Выход");
+        jMenuItemExit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jMenuItemExitActionPerformed(e);
+            }
+        });
+        jMenuMainGame.add(jMenuItemExit);
+
+        jMenuBarMain.add(jMenuMainGame);
+
+        setJMenuBar(jMenuBarMain);
+
     }
 
     private void init() {
