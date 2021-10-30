@@ -680,6 +680,18 @@ public class GamePlay {
         mass[2][2] = 2;
     }
 
+    private void jMenuItemExitActionPerformed(ActionEvent e) {
+        System.exit(0);
+    }
+
+    private void jMenuItem15PActionPerformed(ActionEvent e) {
+        jFrameRule15P.setVisible(true);
+    }
+
+    private void jMenuItemRTPActionPerformed(ActionEvent e) {
+        jFrameRuleRTP.setVisible(true);
+    }
+
 
     public boolean checkWin() {
         boolean status = true;
