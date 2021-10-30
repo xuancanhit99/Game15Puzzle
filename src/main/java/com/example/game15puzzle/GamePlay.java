@@ -2,6 +2,9 @@ package com.example.game15puzzle;
 
 
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Random;
 
 public class GamePlay {
@@ -78,7 +81,53 @@ public class GamePlay {
         jTextArea15P = new JTextArea();
 
         jButton15PMixNum = new JButton();
+        //---Game RTP---
+        jFrameRuleRTP.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        jFrameRuleRTP.setTitle("Правила игры переставь фигуры");
+        jFrameRuleRTP.setBounds(new Rectangle(0, 0, 500, 500));
+        jFrameRuleRTP.setLocationRelativeTo(null);
 
+
+        jButtonPlayRTP.setText("Перейти к игре");
+        jButtonPlayRTP.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButtonPlayRTPActionPerformed(e);
+            }
+        });
+
+
+        jTextAreaRTP.setColumns(20);
+        jTextAreaRTP.setFont(new Font("Times New Roman", Font.PLAIN, 16));
+        jTextAreaRTP.setRows(5);
+        jTextAreaRTP.setText("                                           Добро пожаловать!\n\n" +
+                "   При нажатии кнопки \"Перейти к игре\" перед вами появится \n игровое поле 3х3 с стоящими на нем фигурами. Ваша задача\n заключается в том, чтобы перенести верхние фигуры вниз, а\n верхние вверх, игра считается оконченной если переставлены\n все фигуры.Так же, в таблице сбоку будут показываться ваши\n ходы. Желаю удачи!");
+        jTextAreaRTP.setEditable(false);
+
+        jScrollPaneRTP = new JScrollPane();
+        jScrollPaneRTP.setFont(new Font("Times New Roman", Font.PLAIN, 12));
+        jScrollPaneRTP.setViewportView(jTextAreaRTP);
+
+        jFrameRTPLayout = new GroupLayout(jFrameRuleRTP.getContentPane());
+        jFrameRuleRTP.getContentPane().setLayout(jFrameRTPLayout);
+        jFrameRTPLayout.setHorizontalGroup(
+                jFrameRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(jFrameRTPLayout.createSequentialGroup()
+                                .addGap(180, 180, 180)
+                                .addComponent(jButtonPlayRTP)
+                                .addContainerGap(200, Short.MAX_VALUE)
+                        )
+                        .addComponent(jScrollPaneRTP)
+        );
+
+        jFrameRTPLayout.setVerticalGroup(
+                jFrameRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(GroupLayout.Alignment.TRAILING, jFrameRTPLayout.createSequentialGroup()
+                                .addComponent(jScrollPaneRTP, GroupLayout.PREFERRED_SIZE, 230, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                                .addComponent(jButtonPlayRTP)
+                                .addGap(30, 30, 30))
+        );
     }
 
     //Re-initialize array
