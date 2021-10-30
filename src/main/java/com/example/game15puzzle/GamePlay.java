@@ -221,6 +221,88 @@ public class GamePlay {
 
     }
 
+    private void init() {
+        int[] invariants = new int[16];
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                numbers[i][j] = 0;
+                invariants[i * 4 + j] = 0;
+            }
+        }
+
+        for (int i = 1; i < 16; i++) {
+            int k;
+            int l;
+            do {
+                k = generator.nextInt(100) % 4;
+                l = generator.nextInt(100) % 4;
+            }
+            while (numbers[k][l] != 0);
+            numbers[k][l] = i;
+            invariants[k * 4 + l] = i;
+        }
+
+        boolean change = true;
+        int counter = 1;
+        while (change) {
+            change = false;
+            for (int i = 0; i < 16; i++) {
+                if (invariants[i] != i) {
+                    for (int j = 0; j < 16; j++) {
+                        if (invariants[j] == i) {
+                            int temp = invariants[i];
+                            invariants[i] = invariants[j];
+                            invariants[j] = temp;
+                            change = true;
+                            counter++;
+                            break;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+
+        if (counter % 2 != 0) {
+            int temp = numbers[0][0];
+            numbers[0][0] = numbers[3][3];
+            numbers[3][3] = temp;
+        }
+    }
+
+    public void repaintField() {
+        jPanel15P.removeAll();
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                JButton button = new JButton(Integer.toString(numbers[i][j]));
+                button.setFocusable(false);
+                jPanel15P.add(button);
+                if (numbers[i][j] == 0) {
+                    button.setVisible(false);
+                } else
+                    button.addActionListener(new ClickListener());
+            }
+        }
+        jPanel15P.add(jPanel15pBottom);
+        jButton15PMixNum.setText("Перемешать");
+        jPanel15pBottom.add(jButton15PMixNum);
+        jPanel15P.validate();
+    }
+
+    public boolean checkWin() {
+        boolean status = true;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                if (i == 3 && j > 2)
+                    break;
+                if (numbers[i][j] != i * 4 + j + 1) {
+                    status = false;
+                }
+            }
+        }
+        return status;
+    }
+
     //Re-initialize array
     public void Init() {
         for (int i = 0; i < 4; i++) {
