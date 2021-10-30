@@ -595,6 +595,42 @@ public class GamePlay {
         }
     }
 
+    private void jButton1ActionPerformed(ActionEvent e) {
+        func(0, 0);
+    }
+
+    private void jButton2ActionPerformed(ActionEvent e) {
+        func(0, 1);
+    }
+
+    private void jButton3ActionPerformed(ActionEvent e) {
+        func(0, 2);
+    }
+
+    private void jButton4ActionPerformed(ActionEvent e) {
+        func(1, 0);
+    }
+
+    private void jButton5ActionPerformed(ActionEvent e) {
+        func(1, 1);
+    }
+
+    private void jButton6ActionPerformed(ActionEvent e) {
+        func(1, 2);
+    }
+
+    private void jButton7ActionPerformed(ActionEvent e) {
+        func(2, 0);
+    }
+
+    private void jButton8ActionPerformed(ActionEvent e) {
+        func(2, 1);
+    }
+
+    private void jButton9ActionPerformed(ActionEvent e) {
+        func(2, 2);
+    }
+
 
     public boolean checkWin() {
         boolean status = true;
