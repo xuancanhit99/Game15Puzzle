@@ -222,6 +222,92 @@ public class GamePlay {
             }
         });
 
+        //Tab RTP
+        GroupLayout jPanelRTPLayout = new GroupLayout(jPanelRTP);
+        jPanelRTP.setLayout(jPanelRTPLayout);
+        jPanelRTPLayout.setHorizontalGroup(
+                jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelRTPLayout.createSequentialGroup()
+                                .addGap(37, 37, 37)
+                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel1)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel3))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel4, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButton7, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(jPanelRTPLayout.createSequentialGroup()
+                                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton8, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jButton3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton9, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(jPanelRTPLayout.createSequentialGroup()
+                                                .addComponent(jLabel5, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+                                .addGap(20, 20, 20)
+                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(jButtonStartRTP)
+                                        .addComponent(jScrollPaneTable, GroupLayout.PREFERRED_SIZE, 320, GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanelRTPLayout.setVerticalGroup(
+                jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelRTPLayout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanelRTPLayout.createSequentialGroup()
+                                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                        .addComponent(jLabel4)
+                                                        .addComponent(jLabel5)
+                                                        .addComponent(jLabel6))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jButton1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel1, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(jButton4, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel2, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton5, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton6, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addGroup(jPanelRTPLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                                .addComponent(jButton7, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE))
+                                                        .addComponent(jButton8, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jButton9, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
+                                        .addGroup(GroupLayout.Alignment.TRAILING, jPanelRTPLayout.createSequentialGroup()
+                                                .addComponent(jScrollPaneTable, GroupLayout.PREFERRED_SIZE, 309, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jButtonStartRTP)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        GroupLayout jFrameGameMainLayout = new GroupLayout(jFrameGameMain.getContentPane());
+        jFrameGameMain.getContentPane().setLayout(jFrameGameMainLayout);
+        jFrameGameMainLayout.setHorizontalGroup(
+                jFrameGameMainLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jTabbedPaneGameMain, GroupLayout.Alignment.TRAILING)
+        );
+        jFrameGameMainLayout.setVerticalGroup(
+                jFrameGameMainLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(jTabbedPaneGameMain)
+        );
+
     }
 
     private void init() {
