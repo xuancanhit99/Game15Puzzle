@@ -2,6 +2,7 @@ package com.example.game15puzzle;
 
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -182,6 +183,20 @@ public class GamePlay {
         jFrameGameMain.setTitle("Игра");
         jFrameGameMain.setBounds(new Rectangle(0, 0, 750, 520));
         jFrameGameMain.setLocationRelativeTo(null);
+
+        //Table Game RTP
+        jTableRTP = new JTable();
+        jTableRTP.setShowGrid(true);
+        jTableRTP.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 13));
+        jTableRTP.setModel(new DefaultTableModel(
+                new Object[][]{
+                },
+                new String[]{
+                        "Фигура", "Клетка n-1", "Клетка n"
+                }
+        ));
+        jScrollPaneTable = new JScrollPane();
+        jScrollPaneTable.setViewportView(jTableRTP);
 
 
 
