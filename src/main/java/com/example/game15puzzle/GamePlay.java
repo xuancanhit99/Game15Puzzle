@@ -198,7 +198,10 @@ public class GamePlay {
         jScrollPaneTable = new JScrollPane();
         jScrollPaneTable.setViewportView(jTableRTP);
 
-
+        //Tab in Main Game
+        jTabbedPaneGameMain = new JTabbedPane();
+        jTabbedPaneGameMain.addTab("Переставь фигуры", jPanelRTP);
+        jTabbedPaneGameMain.addTab("Пятнашки", jPanel15P);
 
     }
 
