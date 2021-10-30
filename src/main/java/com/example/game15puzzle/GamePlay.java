@@ -77,6 +77,7 @@ public class GamePlay {
         jFrameRule15P = new JFrame();
         jTextArea15P = new JTextArea();
 
+        jButton15PMixNum = new JButton();
 
     }
 
