@@ -631,6 +631,55 @@ public class GamePlay {
         func(2, 2);
     }
 
+    private void jButtonPlay15PActionPerformed(ActionEvent e) {
+        jFrameGameMain.setVisible(true);
+        jFrameRule15P.dispose();
+        jTabbedPaneGameMain.setSelectedIndex(1);
+    }
+
+    private void jButtonStartRTPActionPerformed(ActionEvent e) {
+        DefaultTableModel model = (DefaultTableModel) jTableRTP.getModel();
+        model.setRowCount(0);
+        jButton1.setEnabled(true);
+        jButton2.setEnabled(true);
+        jButton3.setEnabled(true);
+        jButton4.setEnabled(true);
+        jButton5.setEnabled(true);
+        jButton6.setEnabled(true);
+        jButton7.setEnabled(true);
+        jButton8.setEnabled(true);
+        jButton9.setEnabled(true);
+
+        jButton1.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 50));
+        jButton2.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 50));
+        jButton3.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 50));
+        jButton4.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 50));
+        jButton5.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 50));
+        jButton6.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 50));
+        jButton7.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 50));
+        jButton8.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 50));
+        jButton9.setFont(new Font("Segoe UI Symbol", Font.PLAIN, 50));
+
+        jButton1.setText("♘");
+        jButton2.setText("♘");
+        jButton3.setText("♘");
+        jButton4.setText(" ");
+        jButton5.setText(" ");
+        jButton6.setText(" ");
+        jButton7.setText("♞");
+        jButton8.setText("♞");
+        jButton9.setText("♞");
+        mass[0][0] = 1; // 1 - верхнии клетки
+        mass[0][1] = 1;
+        mass[0][2] = 1;
+        mass[1][0] = 0; // 0 - пустая клетка
+        mass[1][1] = 0;
+        mass[1][2] = 0;
+        mass[2][0] = 2; // 2 - нижнии клетки
+        mass[2][1] = 2;
+        mass[2][2] = 2;
+    }
+
 
     public boolean checkWin() {
         boolean status = true;
