@@ -8,6 +8,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 class Game15PuzzleApplicationTests {
 
+    @Test
+    public void Test(){
+        assertThat(2).isEqualTo(1+1);
+    }
+
 //    @Test
 //    public void GamePlayInitTestCase1() {
 //        GamePlay gamePlay = new GamePlay();
