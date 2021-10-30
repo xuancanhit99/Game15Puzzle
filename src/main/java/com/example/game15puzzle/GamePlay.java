@@ -693,6 +693,7 @@ public class GamePlay {
     }
 
 
+
     public boolean checkWin() {
         boolean status = true;
         for (int i = 0; i < 4; i++) {
@@ -705,6 +706,98 @@ public class GamePlay {
             }
         }
         return status;
+    }
+
+    private void jButtonPlayRTPActionPerformed(ActionEvent e) {
+        jFrameGameMain.setVisible(true);
+        jFrameRuleRTP.dispose();
+        jTabbedPaneGameMain.setSelectedIndex(0);
+    }
+
+    int mass[][] = new int[3][3];
+    int jp = 0; // Координата y
+    int ip = 0; // Координата x
+    String s;
+    String ss;
+
+    public void func(int i, int j) {
+        String[][] AM = new String[3][3];
+        AM[0][0] = jButton1.getText();
+        AM[0][1] = jButton2.getText();
+        AM[0][2] = jButton3.getText();
+        AM[1][0] = jButton4.getText();
+        AM[1][1] = jButton5.getText();
+        AM[1][2] = jButton6.getText();
+        AM[2][0] = jButton7.getText();
+        AM[2][1] = jButton8.getText();
+        AM[2][2] = jButton9.getText();
+        if (mass[i][j] == 0) {
+            //check
+            if (j + 1 == 1) {
+                ss = "A" + (i + 1);
+            }
+            if (j + 1 == 2) {
+                ss = "B" + (i + 1);
+            }
+            if (j + 1 == 3) {
+                ss = "C" + (i + 1);
+            }
+            if (jp + 1 == 1) {
+                s = "A" + (ip + 1);
+            }
+            if (jp + 1 == 2) {
+                s = "B" + (ip + 1);
+            }
+            if (jp + 1 == 3) {
+                s = "C" + (ip + 1);
+            }
+            if (mass[ip][jp] == 1) {
+                if ((Math.abs(j - jp) == 1 && Math.abs(i - ip) == 2) || (Math.abs(j - jp) == 2 && Math.abs(i - ip) == 1)) // Перемешаем координату x на 1 и координа y на 2, а так же делаем реверсию ее
+                {
+                    DefaultTableModel model = (DefaultTableModel) jTableRTP.getModel();
+                    model.addRow(new Object[]{"♘", s, ss});
+                    mass[i][j] = 1;
+                    AM[i][j] = "♘";
+                    mass[ip][jp] = 0;
+                    AM[ip][jp] = " ";
+                }
+            }
+            if (mass[ip][jp] == 2) {
+                if ((Math.abs(j - jp) == 1 && Math.abs(i - ip) == 2) || (Math.abs(j - jp) == 2 && Math.abs(i - ip) == 1)) // Перемешаем координату x на 1 и координа y на 2, а так же делаем реверсию ее
+                {
+                    DefaultTableModel model = (DefaultTableModel) jTableRTP.getModel();
+                    model.addRow(new Object[]{"♞", s, ss});
+                    mass[i][j] = 2;
+                    AM[i][j] = "♞";
+                    mass[ip][jp] = 0;
+                    AM[ip][jp] = " ";
+                }
+            }
+        }
+        jButton1.setText(AM[0][0]);
+        jButton2.setText(AM[0][1]);
+        jButton3.setText(AM[0][2]);
+        jButton4.setText(AM[1][0]);
+        jButton5.setText(AM[1][1]);
+        jButton6.setText(AM[1][2]);
+        jButton7.setText(AM[2][0]);
+        jButton8.setText(AM[2][1]);
+        jButton9.setText(AM[2][2]);
+        ip = i;
+        jp = j;
+
+        if (mass[0][0] == 2 && mass[0][1] == 2 && mass[0][2] == 2 && mass[1][0] == 0 && mass[1][1] == 0 && mass[1][2] == 0 && mass[2][0] == 1 && mass[2][1] == 1 && mass[2][2] == 1) {
+            JOptionPane.showMessageDialog(rootPane, "Поздравляю. Фигуры переставлены, конец игры!", "Вы выиграли!", 1);
+            jButton1.setEnabled(false);
+            jButton2.setEnabled(false);
+            jButton3.setEnabled(false);
+            jButton4.setEnabled(false);
+            jButton5.setEnabled(false);
+            jButton6.setEnabled(false);
+            jButton7.setEnabled(false);
+            jButton8.setEnabled(false);
+            jButton9.setEnabled(false);
+        }
     }
 
     //Re-initialize array
